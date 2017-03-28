@@ -22,7 +22,10 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   // you will need to modify the model (getDish and getAllDishes) 
   // a bit to take the advantage of Angular resource service
   // check lab 5 instructions for details
-  
+
+
+
+    var numberOfGuests = 1;
     var showDish = [];
     var dishes = [];
     var starter = "";
@@ -188,9 +191,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
       }
     });
     this.Dish = $resource('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/:id/information',{},{
-      get: {
+     get: {
         headers: {
-       'X-Mashape-Key': 'Qu9grxVNWpmshA4Kl9pTwyiJxVGUp1lKzrZjsnghQMkFkfA4LB'
+          'X-Mashape-Key': 'Qu9grxVNWpmshA4Kl9pTwyiJxVGUp1lKzrZjsnghQMkFkfA4LB'
         }
       }
     });
