@@ -1,0 +1,40 @@
+<div class="row view">
+      <div class="row">
+        <div class="col-sm-6 alignLeft">
+          <h1>My Dinner: {{people}} people</h1>
+        </div>
+
+        <div class="col-sm-6 alignRight">
+          <a href="#!/search" class="btn btn-primary" id="bigButton">Go back and edit dinner</a>
+        </div>
+
+      </div>
+<hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h2>{{starter}}</h2>
+          <img id="starterImage" width="100%"/>
+          <p>{{starterPrice}}</p>
+        </div>
+        <div class="col-sm-3">
+          <h2>{{mainDish}}</h2>
+          <img id="mainImage" width="100%"/>
+          <p>{{mainDishImage}}</p>
+        </div>
+        <div class="col-sm-3">
+          <h2>{{dessert}}</h2>
+          <img id="dessertImage" width="100%"/>
+          <p>{{dessertImage}}</p>
+        </div>
+        <div class="col-sm-3">
+          <h2>Total Price:</h2>
+          <h1>{{totalPrice}} SEK</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 alignCenter">
+          <input type="button" id="printFullRecipe" class="bigButton" value="Print full recipe" />
+        </div>
+      </div>
+    </div>

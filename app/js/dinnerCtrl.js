@@ -6,6 +6,9 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   $scope.starter = Dinner.getCourse("starter");
   $scope.mainDish = Dinner.getCourse("mainDish");
   $scope.dessert = Dinner.getCourse("dessert");
+  //$scope.starterPrice = Dinner.getDishPrice("starter");
+  //$scope.mainDishPrice = Dinner.getDishPrice("mainDish");
+  //$scope.dessertPrice = Dinner.getDishPrice("dessert");
 
   $scope.setNumberOfGuest = function(number){
     Dinner.setNumberOfGuests(number);
