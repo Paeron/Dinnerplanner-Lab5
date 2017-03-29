@@ -1,0 +1,26 @@
+searchResultsHtml += '
+<td><table id="searchResultsInnerTable">
+
+<tr>
+<td>
+  <div class="placeholder" id="'+ results[i].id +'">
+    <div onClick="" id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur20">
+    </div>
+    <div onClick="" id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur15">
+    </div>
+    <div onClick="" id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur10">
+    </div>
+    <div onClick="" id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur5">
+    </div>
+    <div onClick="" id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur2">
+    </div>
+    <div onClick="" id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image" >
+    </div>
+  </div>
+</td>
+</tr>
+
+<tr><td><b>' + results[i].title + '</b></td></tr>
+<tr><td>' + results[i].description + '</td></tr>
+
+</table></td>';

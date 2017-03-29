@@ -12,9 +12,9 @@ not support it in free version) and list all the dishes that match the search. -
 		  <div class="row">
 		    <div class="col-xs-6">
 		        <h4>Select dish </h4>
-		        <hr style="width:150%;">
 		    </div>
 		  </div>
+			<hr>
 
 		  <div class="row">
 		    <div class="col-xs-4">
@@ -26,21 +26,21 @@ not support it in free version) and list all the dishes that match the search. -
 		          <option value="dessert">Desserts</option>
 		        </select>
 		    </div>
-
 		    <div class="col-xs-4">
 		        <input type="button" ng-click="search()" value="Search" class="smallButton" />
 		    </div>
 		  </div>
 		  <hr>
 
-			<p>
-			  {{status}}
-			</p>
+			<div class="row">
+				<p>
+				  {{status}}
+				</p>
 
-			<p>
-			  {{dishes}}
-			</p>
-
+				<p>
+				  {{dishes}}
+				</p>
+      </div>
 		</div>
 	</div>
 </div>
