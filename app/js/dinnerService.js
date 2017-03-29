@@ -24,13 +24,13 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   // check lab 5 instructions for details
 
 
-
+    var SpoonacularApiKey = 'Qu9grxVNWpmshA4Kl9pTwyiJxVGUp1lKzrZjsnghQMkFkfA4LB';
     var numberOfGuests = 1;
     var showDish = [];
     var dishes = [];
-    var starter = "";
-    var mainDish = "";
-    var dessert = "";
+    var starter = "583901";
+    var mainDish = "583901";
+    var dessert = "583901";
     var localDishes = [];
     var getDish_lastCall;
 
