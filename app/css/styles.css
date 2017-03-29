@@ -45,19 +45,21 @@ body {
 
 
 .listDishName{
-    background-color: lightgrey;
+    background-color: #d3d3d3;
 }
 
 .listDishName #t1{
     text-align: left;
+    vertical-align: left;
 }
 
 .listDishName #t2{
     text-align: right;
+    vertical-align: right;
 }
 
 #listDishes, #listTotalCost {
-    color: darkred;
+    color: #8b0000;
 }
 
 #listTotalCost > hr{

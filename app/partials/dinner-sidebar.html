@@ -2,19 +2,19 @@ People: <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGue
 
 <!-- TODO in Lab 5: Display the items on the menu with cost for each -->
 
-  		<ul compact class="sidebar-nav" id="view2">
-                <li class="sidebar-brand">
+  		<div compact class="sidebar-nav">
+                <span class="sidebar-brand">
                     <h4>My Dinner</h4>
-                </li>
-                <li>
-                    People: <input type="number" id="numberOfGuests" value="1" />
-                </li>
-                <li class="listDishName">
+                </span>
+                <span>
+                    People: <input type="number" id="numberOfGuests" value="1"/>
+                </span>
+                <span class="listDishName">
                     <hr>
                     <span id="t1">Dish name </span><span id="t2">Cost</span>
                     <hr>
-                </li>
-                <li id="listDishes">
+                </span>
+                <span id="listDishes">
                 	<table>
                 		<tr>
 	                		<td>
@@ -41,16 +41,16 @@ People: <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGue
 			                </td>
 		                </tr>
 				        	</table>
-                </li>
-                <li id="listTotalCost">
+                </span>
+                <span id="listTotalCost">
                     <hr>
                     <p>Total cost: <span id="totalCost"></span></p>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input type="button" id="confirmDinner" class="smallButton" value="Confirm Dinner"/>
-                </li>
+                </span>
 
-        </ul>
+        </div>
 
 <!-- Displaying number of guests both in input box and here is redundant. It is here only for the example
 purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace 
