@@ -12,6 +12,7 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
     		for (var i in data.results){
     			$scope.dishes += data.results[i].title + " | ";
     		}
+        console.log(data);
    		},function(data){
     		$scope.status = "There was an error";
    		});

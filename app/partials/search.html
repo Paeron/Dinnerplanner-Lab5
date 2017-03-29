@@ -18,16 +18,13 @@ not support it in free version) and list all the dishes that match the search. -
 
 		  <div class="row">
 		    <div class="col-xs-4">
-		        <input type="text" ng-model="searchText" placeholder="Enter Keywords"/>
-		        in
-		        <select ng-model="dishType">
-		          <option value="starter">Starters</option>
-		          <option value="main dish">Main dishes</option>
-		          <option value="dessert">Desserts</option>
-		        </select>
-		    </div>
-		    <div class="col-xs-4">
-		        <input type="button" ng-click="search()" value="Search" class="smallButton" />
+						<input ng-model="searchText" placeholder="Enter Keywords" />
+						in
+						<select ng-model="dishType" name="dishType" ng-change="search(query, type)">
+						  <option value="appetizer">Starter</option>
+						  <option value="main course">Main</option>
+						  <option value="dessert">Dessert</option>
+						</select>
 		    </div>
 		  </div>
 		  <hr>
@@ -40,6 +37,33 @@ not support it in free version) and list all the dishes that match the search. -
 				<p>
 				  {{dishes}}
 				</p>
+
+
+
+
+
+
+
+
+				<div ng-repeat="result in results" class="col-md-6">
+            <img ng-src="{{ result.img }}">
+            <p class="title"> {{ result.name | uppercase}}</p>
+            <p class="price"> {{ result.price | currency }} </p>
+            <p class="date"> {{ result.pubdate | date }} </p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
 		</div>
 	</div>
