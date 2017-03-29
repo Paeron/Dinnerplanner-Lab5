@@ -6,6 +6,13 @@ body {
     text-align: left;
 }
 
+#sidebar {
+    background-color: #FFF;
+    height: 100%;
+    vertical-align: left;
+    padding-bottom: 50%;
+}
+
 .verticalAlignUp{
     vertical-align: top;
 }
