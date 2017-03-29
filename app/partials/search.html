@@ -20,23 +20,84 @@ not support it in free version) and list all the dishes that match the search. -
 		    <div class="col-xs-4">
 						<input ng-model="searchText" placeholder="Enter Keywords" />
 						in
-						<select ng-model="dishType" name="dishType" ng-change="search(query, type)">
+						<select ng-model="dishType" name="dishType" ng-change="search()">
 						  <option value="appetizer">Starter</option>
 						  <option value="main course">Main</option>
 						  <option value="dessert">Dessert</option>
 						</select>
 		    </div>
+
 		  </div>
 		  <hr>
 
 			<div class="row">
-				<p>
-				  {{status}}
-				</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				<p>
-				  {{dishes}}
+					<button ng-click="search()">Find</button>
+					{{status}}
 				</p>
+
+				<table id="searchResultsOuterTable">
+				  <tr>
+				    <div ng-repeat="dish in results">
+									<!--
+				              <div class="placeholder" id="'+ results[i].id +'">
+				                <div id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur20">
+				                </div>
+				                <div id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur15">
+				                </div>
+				                <div id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur10">
+				                </div>
+				                <div id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur5">
+				                </div>
+				                <div id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image-blur2">
+				                </div>
+				                <div id="'+ results[i].id +'" style="background-image:url(https://spoonacular.com/recipeImages/' + results[i].image +');" class="dishImage bg-image" >
+				                </div>
+				              </div>
+				          -->
+				              <img ng-src="https://spoonacular.com/recipeImages/{{dish.image}}"/>
+				              <h4> {{ dish.title }} </h4>
+											<p>
+												<a ng-href="#!/dish/{{ dish.id }}">View more</a><br>
+				              	Dish ready in {{ dish.readyInMinutes }} minutes
+											</p>
+				    </div>
+				  </tr>
+				</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

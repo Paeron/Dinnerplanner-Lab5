@@ -8,7 +8,8 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
    		$scope.status = "Searching...";
    		$scope.dishes = "";
    		Dinner.DishSearch.get({query:$scope.searchText, type:$scope.dishType},function(data){
-    		$scope.status = "Showing " + data.results.length + " results";
+        $scope.results = data.results;
+        $scope.status = "Showing " + data.results.length + " results";
     		for (var i in data.results){
     			$scope.dishes += data.results[i].title + " | ";
     		}
