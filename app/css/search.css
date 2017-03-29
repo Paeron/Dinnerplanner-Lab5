@@ -1,15 +1,19 @@
 .placeholder {
-    margin-right: auto;
-    margin-left:auto;
-    margin-top: 20px;
-    height: 200px;
     width: 300px;
+    height: 200px;
     position: relative;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
     margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: auto;
     padding-top: 50px;
-
+    padding-bottom: 20px;
+    /* this is the only relevant part for the example */
+}
+.dishInfo {
+    position: relative;
+    margin-left: 50px;
+    padding-bottom: 20px;
     /* this is the only relevant part for the example */
 }
 /* both DIVs have the same image */
