@@ -1,4 +1,4 @@
-People: <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
+
 
 <!-- TODO in Lab 5: Display the items on the menu with cost for each -->
 
@@ -7,47 +7,48 @@ People: <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGue
                     <h4>My Dinner</h4>
                 </span>
                 <span>
-                    People: <input type="number" id="numberOfGuests" value="1"/>
+                	People: <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)" id="numberOfGuests"/>
                 </span>
                 <span class="listDishName">
                     <hr>
-                    <span id="t1">Dish name </span><span id="t2">Cost</span>
+                    <span id="t1">Dish name and </span><span id="t2">Cost</span>
                     <hr>
                 </span>
                 <span id="listDishes">
                 	<table>
                 		<tr>
 	                		<td>
-			                    <p><span id="starter"></span></p>
+			                    <p>{{starter}}</p>
 			                </td>
 			                <td>
-			                	<p><span id="starterPrice"></span></p>
+			                	<p>{{starterPrice}}</p>
 			                </td>
 		                </tr>
                 		<tr>
 	                		<td>
-			                    <p><span id="mainDish"></span></p>
+			                    <p>{{mainDish}}</p>
 			                </td>
 			                <td>
-			                	<p><span id="mainDishPrice"></span></p>
+			                	<p>{{mainDishPrice}}</p>
 			                </td>
 		                </tr>
                 		<tr>
 	                		<td>
-			                    <p><span id="dessert"></span></p>
+			                    <p>{{dessert}}</p>
 			                </td>
 			                <td>
-			                	<p><span id="dessertPrice"></span></p>
+			                	<p>{{dessertPrice}}</p>
 			                </td>
 		                </tr>
 				        	</table>
                 </span>
                 <span id="listTotalCost">
                     <hr>
-                    <p>Total cost: <span id="totalCost"></span></p>
+                    <p>Total cost: {{totalCost}}</p>
                 </span>
                 <span>
-                    <input type="button" id="confirmDinner" class="smallButton" value="Confirm Dinner"/>
+                    <input type="button" id="confirmDinner" class="smallButton" value="Confirm Dinner" ng-click=""/>
+                    <a href="#!/menu" class="btn btn-primary" id="smallButton">Confirm Dinner</a>
                 </span>
 
         </div>
