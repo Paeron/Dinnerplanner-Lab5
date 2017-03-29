@@ -5,9 +5,15 @@ dinnerPlannerApp.controller('MenuCtrl', function ($scope,Dinner) {
   $scope.starter = Dinner.getCourse("starter");
   $scope.mainDish = Dinner.getCourse("mainDish");
   $scope.dessert = Dinner.getCourse("dessert");
-  //$scope.starterPrice = Dinner.getDishPrice("starter");
-  //$scope.mainDishPrice = Dinner.getDishPrice("mainDish");
-  //$scope.dessertPrice = Dinner.getDishPrice("dessert");
+  Dinner.getDishPrice("starter",function(price) {
+  $scope.starterPrice = price;
+  });
+  Dinner.getDishPrice("mainDish",function(price) {
+  $scope.mainDish = price;
+  });
+  Dinner.getDishPrice("dessert",function(price) {
+  $scope.dessert = price;
+  });
 
   $scope.totalPrice = Dinner.getTotalMenuPrice();
 });

@@ -141,13 +141,17 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     }
 
     // Summs prices of ingredients of given dish
-    this.getDishPrice = function(type, cb) {
-        this.getDish(this.getCourse(type), function(data){
-            var ings = data.extendedIngredients;
-            var sum = 0;
-            for (i in ings) sum += ings[i].amount;
-            cb(sum);
-        });
+    this.getDishPrice = function(type,cb) {
+        if (this.issetCourse(type)) {
+           this.Dish.get({id:this.getCourse(type)},function(data){
+                var ings = data.extendedIngredients;
+                var sum = 0;
+                for (i in ings) sum += ings[i].amount;
+                cb(sum);
+            }); 
+        }
+        else cb("");
+        
     }
 
     //Returns the total price of the menu (all the ingredients multiplied by number of guests).
