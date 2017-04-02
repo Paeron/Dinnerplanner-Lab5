@@ -6,6 +6,10 @@ body {
     text-align: left;
 }
 
+#dishIngredients {
+    background-color: #ffd67f;
+}
+
 #sidebar {
     background-color: #FFF;
     height: 100%;

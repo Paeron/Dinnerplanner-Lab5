@@ -28,11 +28,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     var numberOfGuests = 1;
     var showDish = [];
     var dishes = [];
-    var starter = "583901";
-    var mainDish = "583901";
-    var dessert = "583901";
+    var starter = "";
+    var mainDish = "";
+    var dessert = "";
     var localDishes = [];
     var getDish_lastCall;
+    var type = "";
 
     // SET starter / mainDish / dessert
     this.setCourse = function(type, value){
@@ -40,7 +41,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
         if (type == "mainDish") mainDish = value;
         if (type == "dessert") dessert = value;
     }
-
+    this.setType = function(ttype){
+        type = ttype;
+    }
+    this.getType = function(){
+        return type;
+    }
     // GET starter / mainDish / dessert
     this.getCourse = function(type){
         if (type == "starter") return starter;
