@@ -35,38 +35,30 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
     return Dinner.getNumberOfGuests();
   }
 
+
   $scope.remove = function(type) {
     console.log(type);
-    Dinner.setCourse(type,"");
-    /*if (type == "starter") {
-      $scope.starter = "";
-      $scope.starterPrice = "";
-    }
-    else if (type == "mainDish") {
-      $scope.mainDish = "";
-      $scope.mainDishPrice = "";
-    }
-    else if (type == "dessert") {
-      $scope.dessert = "";
-      $scope.dessertPrice = "";
-    }*/
+    Dinner.setCourse(type[2],"");
+    $scope.totalCost -= type[1];
   }
 
 
   $scope.fullMenuObjects = [];
   $scope.fullMenuIds = Dinner.getFullMenu();
+  $scope.totalCost = 0;
 
   for (i in $scope.fullMenuIds){
-    console.log("FOR (dinnerCtrl.js)");
-    console.log($scope.fullMenuIds[i]);
+    console.log($scope.fullMenuIds[i][1]);
     Dinner.Dish.get({id:$scope.fullMenuIds[i][0]},function(data) {
       var rightType = $scope.fullMenuIds[i][1];
-      console.log(rightType);
+      if (data.id == Dinner.getCourse("starter")) rightType = "starter";
+      else if (data.id == Dinner.getCourse("mainDish")) rightType = "mainDish";
+      else if (data.id == Dinner.getCourse("dessert")) rightType = "dessert";
       $scope.fullMenuObjects.push([data.title, data.pricePerServing, rightType]);
+      $scope.totalCost += data.pricePerServing;
     });
   }
-  console.log("AFTER FOR (dinnerCtrl.js) ");
-  console.log($scope.fullMenuObjects);
+
   // TODO in Lab 5: Implement the methods to get the dinner menu
   // add dish to menu and get total menu price
 

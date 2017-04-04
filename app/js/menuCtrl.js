@@ -6,30 +6,25 @@ dinnerPlannerApp.controller('MenuCtrl', function ($scope,Dinner) {
   $scope.starterPrice = 0;
   $scope.mainDishPrice = 0;
   $scope.totalPrice = Number(0);
+  $scope.getNumberOfGuests = function() {
+    return Dinner.getNumberOfGuests();
+  }
+
 
   Dinner.Dish.get({id:Dinner.getCourse("starter")},function(data) {
     $scope.starter = data.title;
+    $scope.starterPrice = data.pricePerServing;
+    $scope.totalPrice += Number(data.pricePerServing);
   });
   Dinner.Dish.get({id:Dinner.getCourse("mainDish")},function(data) {
     $scope.mainDish = data.title;
+    $scope.mainDishPrice = data.pricePerServing;
+    $scope.totalPrice += Number(data.pricePerServing);
   });
   Dinner.Dish.get({id:Dinner.getCourse("dessert")},function(data) {
     $scope.dessert = data.title;
+    $scope.dessertPrice = data.pricePerServing;
+    $scope.totalPrice += Number(data.pricePerServing);
   });
 
-  Dinner.getDishPrice("starter",function(price) {
-    console.log(price);
-    $scope.starterPrice = price;
-    $scope.totalPrice += Number(price);
-  });
-  Dinner.getDishPrice("mainDish",function(price) {
-    console.log(price);
-    $scope.mainDishPrice = price;
-    $scope.totalPrice += Number(price);
-  });
-  Dinner.getDishPrice("dessert",function(price) {
-    console.log(price);
-    $scope.dessertPrice = price;
-    $scope.totalPrice += Number(price);
-  });
 });

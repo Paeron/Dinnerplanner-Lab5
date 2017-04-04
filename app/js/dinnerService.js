@@ -12,6 +12,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
   this.setNumberOfGuests = function(num) {
     numberOfGuest = num;
     $cookieStore.put('numberOfGuest',numberOfGuest);
+    
   }
 
   this.getNumberOfGuests = function() {
@@ -31,7 +32,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     var showDish = [];
     var dishes = [];
     var starter = $cookieStore.get('starter');
-          console.log("STARTER LOADED: " + starter);
     var mainDish = $cookieStore.get('mainDish');
     var dessert = $cookieStore.get('dessert');
     var localDishes = [];
@@ -44,7 +44,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
         if (type == "starter") {
           starter = value;
           $cookieStore.put('starter', value);
-          console.log("STARTER SAVED: " );
         }
         if (type == "mainDish") {
           mainDish = value;
@@ -119,8 +118,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
         if (starter) allDishes.push([starter, "starter"]);
         if (mainDish) allDishes.push([mainDish, "mainDish"]);
         if (dessert) allDishes.push([dessert, "dessert"]);
-        console.log("LEAVING (dinnerService.js)");
-        console.log(allDishes);
         return allDishes;
     }
 
@@ -184,7 +181,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
         for (i in ings){
             sum = sum + ings[i].price;
         }
-        console.log("PRICE :" + sum);
         return sum;
 
     }
