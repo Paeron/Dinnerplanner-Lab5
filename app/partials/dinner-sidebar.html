@@ -16,28 +16,28 @@
                 </span>
                 <span id="listDishes">
                 	<table>
-                		<tr>
+                		<tr ng-click="remove('starter')">
 	                		<td>
-			                    <p>{{starter}}</p>
+			                    <p>{{starter}} </p>
 			                </td>
 			                <td>
-			                	<p>{{starterPrice}}</p>
+			                	<p> {{starterPrice}}</p>
 			                </td>
 		                </tr>
-                		<tr>
+                		<tr ng-click="remove('mainDish')">
 	                		<td>
-			                    <p>{{mainDish}}</p>
+			                    <p>{{mainDish}} </p>
 			                </td>
 			                <td>
-			                	<p>{{mainDishPrice}}</p>
+			                	<p> {{mainDishPrice}}</p>
 			                </td>
 		                </tr>
-                		<tr>
+                		<tr ng-click="remove('dessert')">
 	                		<td>
-			                    <p>{{dessert}}</p>
+			                    <p>{{dessert}} </p>
 			                </td>
 			                <td>
-			                	<p>{{dessertPrice}}</p>
+			                	<p> {{dessertPrice}}</p>
 			                </td>
 		                </tr>
 				        	</table>

@@ -5,8 +5,9 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
   // TODO in Lab 5: you will need to implement a method that searchers for dishes
   // including the case while the search is still running.
    	$scope.search = function() {
+      console.log($scope.dishType);
       if ($scope.dishType == "appetizer") {Dinner.setType("starter");}
-      else if ($scope.dishType == "main dish") {Dinner.setType("mainDish");}
+      else if ($scope.dishType == "main course") {Dinner.setType("mainDish");}
       else if ($scope.dishType == "dessert") {Dinner.setType("dessert");}
    		$scope.status = "Searching...";
    		$scope.dishes = "";

@@ -168,7 +168,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
         for (i in ings){
             sum = sum + ings[i].price;
         }
-
+        console.log("PRICE :" + sum);
         return sum;
         
     }
