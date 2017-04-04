@@ -105,7 +105,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
         if (starter) allDishes = allDishes.concat(starter);
         if (mainDish) allDishes = allDishes.concat(mainDish);
         if (dessert) allDishes = allDishes.concat(dessert);
-        return ""+starter+", "+mainDish+", "+dessert;//allDishes;
+        return allDishes;
     }
 
     // Returns all ingredients for all the dishes on the menu.
