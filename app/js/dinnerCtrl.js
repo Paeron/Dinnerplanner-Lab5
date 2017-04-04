@@ -1,7 +1,8 @@
-// Dinner controller that we use whenever we have view that needs to 
+// Dinner controller that we use whenever we have view that needs to
 // display or modify the dinner menu
 dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
+/*
   $scope.numberOfGuests = Dinner.getNumberOfGuests();
   Dinner.Dish.get({id:Dinner.getCourse("starter")},function(data) {
     $scope.starter = data.title;
@@ -21,6 +22,8 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   Dinner.getDishPrice("dessert",function(price) {
 	$scope.dessertPrice = price;
   });
+
+*/
   //$scope.mainDishPrice = Dinner.getDishPrice("mainDish");
   //$scope.dessertPrice = Dinner.getDishPrice("dessert");
 
@@ -32,22 +35,35 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
     return Dinner.getNumberOfGuests();
   }
 
-  $scope.remove = function(id) {
-    Dinner.setCourse(id,"");
-    if (id == "starter") {
+  $scope.remove = function(type) {
+    Dinner.setCourse(type,"");
+    if (type == "starter") {
       $scope.starter = "";
       $scope.starterPrice = "";
     }
-    else if (id == "mainDish") {
+    else if (type == "mainDish") {
       $scope.mainDish = "";
       $scope.mainDishPrice = "";
     }
-    else if (id == "dessert") {
+    else if (type == "dessert") {
       $scope.dessert = "";
       $scope.dessertPrice = "";
     }
   }
 
+
+  $scope.fullMenuObjects = [];
+  $scope.fullMenuIds = Dinner.getFullMenu();
+
+  for (i in $scope.fullMenuIds){
+    console.log("FOR (dinnerCtrl.js)");
+    console.log($scope.fullMenuIds[i]);
+    Dinner.Dish.get({id:$scope.fullMenuIds[i][0]},function(data) {
+      $scope.fullMenuObjects.push([data.title, data.pricePerServing, $scope.fullMenuIds[i][1]]);
+    });
+  }
+  console.log("AFTER FOR (dinnerCtrl.js) ");
+  console.log($scope.fullMenuObjects);
   // TODO in Lab 5: Implement the methods to get the dinner menu
   // add dish to menu and get total menu price
 

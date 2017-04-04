@@ -1,10 +1,10 @@
-// Here we create an Angular service that we will use for our 
+// Here we create an Angular service that we will use for our
 // model. In your controllers (or other services) you can include the
 // dependency on any service you need. Angular will insure that the
 // service is created first time it is needed and then just reuse it
 // the next time.
 dinnerPlannerApp.factory('Dinner',function ($resource) {
-  
+
   var numberOfGuest = 2;
 
 
@@ -19,7 +19,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   // TODO in Lab 5: Add your model code from previous labs
   // feel free to remove above example code
-  // you will need to modify the model (getDish and getAllDishes) 
+  // you will need to modify the model (getDish and getAllDishes)
   // a bit to take the advantage of Angular resource service
   // check lab 5 instructions for details
 
@@ -83,16 +83,16 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
         numberOfGuests = num;
     }
 
-    // should return 
+    // should return
     this.getNumberOfGuests = function() {
         //TODO Lab 2
         return numberOfGuests;
     }
 
-    // Returns the dish that is on the menu for selected type 
+    // Returns the dish that is on the menu for selected type
     this.getSelectedDish = function(type) {
         //TODO Lab 2
-        if (type == "starter" && starter) return starter; 
+        if (type == "starter" && starter) return starter;
         if (type == "mainDish" && mainDish) return mainDish;
         if (type == "dessert" && dessert) return dessert;
         return false;
@@ -102,9 +102,11 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     this.getFullMenu = function() {
         //TODO Lab 2
         var allDishes = [];
-        if (starter) allDishes = allDishes.concat(starter);
-        if (mainDish) allDishes = allDishes.concat(mainDish);
-        if (dessert) allDishes = allDishes.concat(dessert);
+        if (starter) allDishes.push([starter, "starter"]);
+        if (mainDish) allDishes.push([mainDish, "mainDish"]);
+        if (dessert) allDishes.push([dessert, "dessert"]);
+        console.log("LEAVING (dinnerService.js)");
+        console.log(allDishes);
         return allDishes;
     }
 
@@ -143,7 +145,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
            error: function(data) {
              console.log(data)
            }
-        }) 
+        })
     }
 
     // Summs prices of ingredients of given dish
@@ -154,10 +156,10 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
                 var sum = 0;
                 for (i in ings) sum += ings[i].amount;
                 cb(sum);
-            }); 
+            });
         }
         else cb("");
-        
+
     }
 
     //Returns the total price of the menu (all the ingredients multiplied by number of guests).
@@ -170,13 +172,13 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
         }
         console.log("PRICE :" + sum);
         return sum;
-        
+
     }
 
     // Adds the passed dish to the menu. If the dish of that type already exists on the menu
     // it is removed from the menu and the new one added.
     this.addDishToMenu = function(dish) { // params: dish[id, type]
-        //TODO Lab 2 
+        //TODO Lab 2
         if (dish[1]=="starter") starter = dish[0];
         if (dish[1]=="mainDish") mainDish = dish[0];
         if (dish[1]=="dessert") dessert = dish[0];

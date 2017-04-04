@@ -1,18 +1,22 @@
-<!-- TODO in Lab 5: Display the dish information including image, Description, 
+<!-- TODO in Lab 5: Display the dish information including image, Description,
 Instructions, Ingredients and total cost. -->
 
 <div class="container-fluid">
   <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-2" id="sidebar">
+    			<ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+    		</div>
+
+        <div class="col-sm-5">
           <h2>{{dishName}}</h2>
           <img id="dishImage" class="dishImage"/> <br />
           <p>Lorem ipsum </p>
           <a href="#!/search" class="btn btn-primary" id="bigButton">back to Select Dish</a>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
         	<h3>Ingredients for <span id="dishPeople">1</span> people</h3>
           	<p id="dishIngredients"><span ng-repeat="obj in dishData">{{obj.amount}} {{obj.unit}} {{obj.name}} SEK {{obj.amount}}<br></span></p>
-          	<button class="smallButton" ng-click="confirmDish()">Confirm Dish</button>
+          	<a href="#!/search" class="smallButton" ng-click="confirmDish()">Confirm Dish</a>
       	</div>
     </div>
     <div class="row">
@@ -22,4 +26,3 @@ Instructions, Ingredients and total cost. -->
         </div>
     </div>
 </div>
-

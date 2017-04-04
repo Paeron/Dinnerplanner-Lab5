@@ -2,7 +2,7 @@
 
 <!-- TODO in Lab 5: Display the items on the menu with cost for each -->
 
-  		<div ng-controller="DinnerCtrl" compact class="sidebar-nav">
+  		<div compact class="sidebar-nav">
                 <span class="sidebar-brand">
                     <h4>My Dinner</h4>
                 </span>
@@ -14,13 +14,34 @@
                     <span id="t1">Dish name and </span><span id="t2">Cost</span>
                     <hr>
                 </span>
-                <table>
-                  <span id="listDishes" ng-repeat="dish in fullMenuObjects">
-                        <p ng-click="remove(dish[2])">
-			                    {{dish[0]}}{{dish[1]}}
-                        </p>
-                  </span>
-				        </table>
+                <span id="listDishes">
+                	<table>
+                		<tr ng-click="remove('starter')">
+	                		<td>
+			                    <p>{{starter}} </p>
+			                </td>
+			                <td>
+			                	<p> {{starterPrice}}</p>
+			                </td>
+		                </tr>
+                		<tr ng-click="remove('mainDish')">
+	                		<td>
+			                    <p>{{mainDish}} </p>
+			                </td>
+			                <td>
+			                	<p> {{mainDishPrice}}</p>
+			                </td>
+		                </tr>
+                		<tr ng-click="remove('dessert')">
+	                		<td>
+			                    <p>{{dessert}} </p>
+			                </td>
+			                <td>
+			                	<p> {{dessertPrice}}</p>
+			                </td>
+		                </tr>
+				        	</table>
+                </span>
                 <span id="listTotalCost">
                     <hr>
                     <p>Total cost: {{totalCost}}</p>
@@ -32,9 +53,12 @@
         </div>
 
 <!-- Displaying number of guests both in input box and here is redundant. It is here only for the example
-purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace
+purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace 
 this with Total price of the menu -->
 
 
 
 Total number of guest: {{getNumberOfGuests()}}
+
+
+
