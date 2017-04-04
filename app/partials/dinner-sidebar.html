@@ -15,11 +15,9 @@
                     <hr>
                 </span>
                 <table>
-                  <span id="listDishes" ng-repeat="dish in fullMenuObjects">
-                        <p ng-click="remove(dish[2])">
-			                    {{dish[0]}}{{dish[1]}}
-                        </p>
-                  </span>
+                  <div id="listDishes" ng-repeat="dish in fullMenuObjects">
+                        <button ng-click="remove(dish[2])">{{dish[0]}}{{dish[1]}}</button>
+                  </div>
 				        </table>
                 <span id="listTotalCost">
                     <hr>

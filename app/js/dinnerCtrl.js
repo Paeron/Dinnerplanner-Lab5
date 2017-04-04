@@ -36,8 +36,9 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   }
 
   $scope.remove = function(type) {
+    console.log(type);
     Dinner.setCourse(type,"");
-    if (type == "starter") {
+    /*if (type == "starter") {
       $scope.starter = "";
       $scope.starterPrice = "";
     }
@@ -48,7 +49,7 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
     else if (type == "dessert") {
       $scope.dessert = "";
       $scope.dessertPrice = "";
-    }
+    }*/
   }
 
 
@@ -59,7 +60,9 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
     console.log("FOR (dinnerCtrl.js)");
     console.log($scope.fullMenuIds[i]);
     Dinner.Dish.get({id:$scope.fullMenuIds[i][0]},function(data) {
-      $scope.fullMenuObjects.push([data.title, data.pricePerServing, $scope.fullMenuIds[i][1]]);
+      var rightType = $scope.fullMenuIds[i][1];
+      console.log(rightType);
+      $scope.fullMenuObjects.push([data.title, data.pricePerServing, rightType]);
     });
   }
   console.log("AFTER FOR (dinnerCtrl.js) ");
