@@ -30,18 +30,30 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     var numberOfGuests = 1;
     var showDish = [];
     var dishes = [];
-    var starter = "";
-    var mainDish = "";
-    var dessert = "";
+    var starter = $cookieStore.get('starter');
+          console.log("STARTER LOADED: " + starter);
+    var mainDish = $cookieStore.get('mainDish');
+    var dessert = $cookieStore.get('dessert');
     var localDishes = [];
     var getDish_lastCall;
     var type = "";
 
+
     // SET starter / mainDish / dessert
     this.setCourse = function(type, value){
-        if (type == "starter") starter = value;
-        if (type == "mainDish") mainDish = value;
-        if (type == "dessert") dessert = value;
+        if (type == "starter") {
+          starter = value;
+          $cookieStore.put('starter', value);
+          console.log("STARTER SAVED: " );
+        }
+        if (type == "mainDish") {
+          mainDish = value;
+          $cookieStore.put('mainDish', value);
+        }
+        if (type == "dessert") {
+          dessert = value;
+          $cookieStore.put('dessert', value);
+        }
     }
     this.setType = function(ttype){
         type = ttype;
