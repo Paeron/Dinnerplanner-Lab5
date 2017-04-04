@@ -37,7 +37,8 @@ not support it in free version) and list all the dishes that match the search. -
 				<table id="searchResultsOuterTable">
 				  <tr>
 				    <div ng-repeat="dish in results">
-		            <div class="placeholder" id="'+ results[i].id +'">
+<a ng-href="#!/dish/{{ dish.id }}">
+								<div class="placeholder" id="'+ results[i].id +'">
 		              <div id="'+ results[i].id +'" ng-style="{'background-image':'url(https://spoonacular.com/recipeImages/{{ dish.image }}'}" class="dishImage bg-image-blur20">
 		              </div>
 		              <div id="'+ results[i].id +'" ng-style="{'background-image':'url(https://spoonacular.com/recipeImages/{{ dish.image }}'}" class="dishImage bg-image-blur15">
@@ -53,9 +54,9 @@ not support it in free version) and list all the dishes that match the search. -
 								</div>
 								<div class="dishInfo">
 									<strong> {{ dish.title }} </strong>
+									</a>
 									<p>
-										Ready in <strong>{{ dish.readyInMinutes }}</strong> min <br>
-										<a ng-href="#!/dish/{{ dish.id }}">View more</a>
+										Ready in <strong>{{ dish.readyInMinutes }}</strong> min
 									</p>
 		            </div>
 				    </div>
