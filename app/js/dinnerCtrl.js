@@ -33,8 +33,19 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   }
 
   $scope.remove = function(id) {
-    console.log("HEAREEEE");
     Dinner.setCourse(id,"");
+    if (id == "starter") {
+      $scope.starter = "";
+      $scope.starterPrice = "";
+    }
+    else if (id == "mainDish") {
+      $scope.mainDish = "";
+      $scope.mainDishPrice = "";
+    }
+    else if (id == "dessert") {
+      $scope.dessert = "";
+      $scope.dessertPrice = "";
+    }
   }
 
   // TODO in Lab 5: Implement the methods to get the dinner menu
